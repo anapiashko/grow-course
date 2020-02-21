@@ -18,17 +18,6 @@ public class Main {
         Ship ship2 = new Ship("2", 4, 16);
         Ship ship3 = new Ship("3", 5, 25);
 
-        // запускается три потока на три корабля,
-        // они одновременно прибывают,
-        // потом по очереди (не одновремено) разгружаются и загружаются,
-        // далее они уплывают, освобождаяя причал
-
-//        func(port, ship1, 4,5);
-//
-//        func(port, ship2, 5,6);
-//
-//        func(port, ship3, 6, 2);
-//
         Thread tr1 = new Thread(new Trading(port, ship1, 5, 4));
         Thread tr2 = new Thread(new Trading(port,ship2, 5,90));
         Thread tr3 = new Thread(new Trading(port, ship3, 65, 5));
